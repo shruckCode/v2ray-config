@@ -1,33 +1,27 @@
 {
-  "inbounds": [{
-    "port": 19880,
-    "protocol": "vmess",
-    "settings": {
-      "clients": [
-        {
-          "id": "5d95375f-482b-4cf1-b993-77520eb6839a",
-          "level": 1,
-          "alterId": 64
-        }
-      ]
-    }
-  }],
-  "outbounds": [{
-    "protocol": "freedom",
-    "settings": {}
-  },{
-    "protocol": "blackhole",
-    "settings": {},
-    "tag": "blocked"
-  }],
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "blocked"
+  "log": {
+    "loglevel": "warning",
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log"
+  },
+  "inbounds": [
+    {
+      "port": 16820,
+      "protocol": "vmess",    
+      "settings": {
+        "clients": [
+          {
+            "id": "5d95375f-482b-4cf1-b993-77520eb6839a",
+            "alertId":64
+          }
+        ]
       }
-    ]
-  }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
 }
-
